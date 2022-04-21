@@ -11,26 +11,26 @@ import javax.persistence.InheritanceType;
 
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "role_user",length = 4)
-public abstract class User {
+@DiscriminatorColumn(name = "role_user",length = 1000)
+public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="user_Id")
 	private Long id;
 	@Column
-	private String name;
+	private String Name;
 	@Column
-	private String email;
+	private String Email;
 	@Column
-	private String password;
+	private String Password;
 	@Column
 	private String role;
-	public User(Long id, String name, String email, String password) {
+	public User(Long id, String Name, String Email, String Password) {
 		super();
 		this.id = id;
-		this.name = name;
-		this.email = email;
-		this.password = password;
+		this.Name = Name;
+		this.Email = Email;
+		this.Password = Password;
 		
 	}
 	public User() {
@@ -44,23 +44,30 @@ public abstract class User {
 		this.id = id;
 	}
 	public String getName() {
-		return name;
+		return Name;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setName(String Name) {
+		this.Name = Name;
 	}
 	public String getEmail() {
-		return email;
+		return Email;
 	}
-	public void setEmail(String email) {
-		this.email = email;
+	public void setEmail(String Email) {
+		this.Email = Email;
 	}
 	public String getPassword() {
-		return password;
+		return Password;
 	}
-	public void setPassword(String password) {
-		this.password = password;
+	public void setPassword(String Password) {
+		this.Password = Password;
 	}
+	public String getRole() {
+		return role;
+	}
+	public void setRole(String role) {
+		this.role = role;
+	}
+	
 	
 
 }

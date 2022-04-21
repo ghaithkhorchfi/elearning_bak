@@ -6,33 +6,29 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.educIT.model.Student;
 import com.example.educIT.model.User;
 import com.example.educIT.repository.UserRepo;
-import com.example.educIT.service.UserService;
+import com.example.educIT.service.StudentService;
 @Service
-public class UserServiceImpl implements UserService {
+public class StudentServiceImpl implements StudentService {
 	@Autowired
 	private UserRepo userRepo;
-	public User addUser(User a) {
+	public Student addStudent(Student a) {
 		return this.userRepo.save(a);		
 	}
-	public void  deleteUser(Long id) {
+	public void  deleteStudent(Long id) {
 		this.userRepo.deleteById(id);
 	}
-	public User getById(long id) {
+	public Student getById(long id) {
 		Optional<User>user= this.userRepo.findById(id);
-		return user.isPresent()?user.get():null;
+		return user.isPresent()?(Student)user.get():null;
 	}
 	public List<User>getAllUser(){
 		return this.userRepo.findAll();
 	}
-	public User update(User a) {
+	public Student updateStudent(Student a) {
 		return this.userRepo.save(a);
-	}
-	@Override
-	public User getByInfo(String email,String password) {
-		// TODO Auto-generated method stub
-		return this.userRepo.findByInfo(email,password);
 	}
 
 }

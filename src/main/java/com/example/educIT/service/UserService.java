@@ -10,5 +10,6 @@ public interface UserService {
 	public User getById(long id);
 	public List<User>getAllUser();
 	public User update(User a);
+	public User getByInfo(String email,String password);
 
 }
