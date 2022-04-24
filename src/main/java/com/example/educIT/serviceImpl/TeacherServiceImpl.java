@@ -47,4 +47,11 @@ public class TeacherServiceImpl implements TeacherService {
 		return this.userRepo.save(a);
 	}
 
+	@Override
+	public void delete(Long id) {
+		// TODO Auto-generated method stub
+		this.userRepo.deleteById(id);
+		
+	}
+
 }

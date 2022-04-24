@@ -1,5 +1,6 @@
 package com.example.educIT.serviceImpl;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -55,7 +56,9 @@ public class CourseServiceImpl implements CourseService {
 	public Course abon(Course c, Long id) {
 		// TODO Auto-generated method stub
 		Optional<User> e= userRepo.findById(id);
-		c.abon((Student)e.get());
+		List<Student>l=new ArrayList<>();
+		l=c.getStud();
+		l.add((Student)e.get());
 		return this.courseRepo.save(c) ;
 	}
 

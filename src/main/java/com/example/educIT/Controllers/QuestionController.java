@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/questions")
+@RequestMapping("api/questions")
 public class QuestionController {
     @Autowired
     private ChoiceRepository choiceRepository;

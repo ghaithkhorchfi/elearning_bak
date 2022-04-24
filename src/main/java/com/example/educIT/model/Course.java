@@ -165,9 +165,6 @@ public class Course {
 	public void setStud(List<Student> stud) {
 		this.stud = stud;
 	}
-	public void abon(Student e) {
-		this.stud.add(e);
-	}
 
 	@Override
 	public String toString() {
